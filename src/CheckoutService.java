@@ -1,7 +1,7 @@
 public class CheckoutService {
     private static final double SHIPPING_RATE_PER_KG = 5.0;
 
-    public void CheckOut(Customers customer, Cart cart){
+    public void checkOut(Customers customer, Cart cart){
 
  
         if (cart.getAllProduct().isEmpty()) throw new IllegalArgumentException("the cart is empty");
