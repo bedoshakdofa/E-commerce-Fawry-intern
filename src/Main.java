@@ -95,7 +95,7 @@
         private static void getAllProductInventory(){
             for(Products item:prod){
                 System.out.println(item.getId()+" "
-                        +item.getProduct_name()+" quantity==>"
+                        +item.getProductName()+" quantity==>"
                         +item.getProductQuantity()+" Price==>"
                         +item.getPrice());
             }
@@ -106,7 +106,7 @@
             List<Products> List=cart.getAllProduct();
             for(Products item:List){
                 System.out.println(item.getId()+" "
-                        +item.getProduct_name()+" quantity==>"
+                        +item.getProductName()+" quantity==>"
                         +item.getProductQuantity()+" Price==>"
                         +item.getPrice());
             }
