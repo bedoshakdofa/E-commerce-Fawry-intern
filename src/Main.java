@@ -44,19 +44,19 @@
                 choice=in.nextInt();
                 switch (choice) {
                     case 1:
-                        AddProductToCart(in,cart);
+                        addProductToCart(in,cart);
                         break;
                     case 2:
-                        RemoveProductFromCart(in,cart);
+                        removeProductFromCart(in,cart);
                         break;
                     case 3:
-                        GetProductsFromCart(cart);
+                        getProductsFromCart(cart);
                         break;
                     case 4:
-                        checkout.CheckOut(customer,cart);
+                        checkout.checkOut(customer,cart);
                         break;
                     case 5:
-                        GetAllProductInventory();
+                        getAllProductInventory();
                         break;
                     case 0:
                         System.out.println("Bye👋");
@@ -69,30 +69,30 @@
             in.close();
         }
 
-        private static void AddProductToCart(Scanner scanner, Cart cart){
+        private static void addProductToCart(Scanner scanner, Cart cart){
             System.out.println("please enter the number of your item");
             int itemNum=scanner.nextInt();
             System.out.println("please enter you quantity");
             int quantityNum=scanner.nextInt();
             for(Products item:prod){
               if (item.getId()==itemNum){
-                  cart.AddProduct(item,quantityNum);
+                  cart.addProduct(item,quantityNum);
                   break;
               }
             };
         }
 
-        private static void RemoveProductFromCart(Scanner scanner,Cart cart){
+        private static void removeProductFromCart(Scanner scanner,Cart cart){
             System.out.println("please enter the number of your item in the cart");
             int itemNum=scanner.nextInt();
             for(Products item:prod){
                 if (item.getId()==itemNum){
-                    cart.RemoveProduct(item.getId());
+                    cart.removeProduct(item.getId());
                     break;
                 }
             };
         }
-        private static void GetAllProductInventory(){
+        private static void getAllProductInventory(){
             for(Products item:prod){
                 System.out.println(item.getId()+" "
                         +item.getProduct_name()+" quantity==>"
@@ -102,7 +102,7 @@
             System.out.println("=============================================");
         }
 
-        private static void GetProductsFromCart(Cart cart){
+        private static void getProductsFromCart(Cart cart){
             List<Products> List=cart.getAllProduct();
             for(Products item:List){
                 System.out.println(item.getId()+" "
