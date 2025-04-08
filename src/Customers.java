@@ -16,12 +16,12 @@ public class Customers {
         Balance = balance;
     }
 
-    public String getCustomer_Name() {
+    public String getCustomerName() {
         return Customer_Name;
     }
 
-    public void setCustomer_Name(String customer_Name) {
-        Customer_Name = customer_Name;
+    public void setCustomerName(String customerName) {
+        Customer_Name = customerName;
     }
 
     public void  withDrawBalance(double amount){
