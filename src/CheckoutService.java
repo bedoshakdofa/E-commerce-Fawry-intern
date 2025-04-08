@@ -18,23 +18,23 @@ public class CheckoutService {
 
   
         for(Products Item: cart.getAllProduct()){
-            Item.ReduceQuantity();
+            Item.reduceQuantity();
         }
 
         printReceipt(cart,subtotal,totalShip,customer);
-        cart.RestCart();
+        cart.restCart();
     }
     private static void printReceipt(Cart cart, double subtotal, double shipping, Customers customer) {
         System.out.println("** Shipment notice**");
         for(Products Item: cart.getAllProduct()){
             if(!Item.isShippable()) continue;
-            System.out.println(Item.getPurchasedProduct()+"X  "+Item.getProduct_name()+"  = "+Item.getWight() * Item.getPurchasedProduct()+"g");
+            System.out.println(Item.getPurchasedProduct()+"X  "+Item.getProductName()+"  = "+Item.getWight() * Item.getPurchasedProduct()+"g");
         }
         System.out.println("Total Amount Package = "+shipping);
         System.out.println("===================================");
         System.out.println("** Checkout receipt **");
         for(Products Item: cart.getAllProduct()){
-            System.out.println(Item.getPurchasedProduct()+"X  "+Item.getProduct_name()+"  = "+Item.getPrice() * Item.getPurchasedProduct()+" Egb");
+            System.out.println(Item.getPurchasedProduct()+"X  "+Item.getProductName()+"  = "+Item.getPrice() * Item.getPurchasedProduct()+" Egb");
         }
         System.out.println("================================");
         System.out.println("Subtotal "+ subtotal);
