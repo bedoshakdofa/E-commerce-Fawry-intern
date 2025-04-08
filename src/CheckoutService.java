@@ -3,10 +3,9 @@ public class CheckoutService {
 
     public void CheckOut(Customers customer, Cart cart){
 
-        //check if the cart is empty
+ 
         if (cart.getAllProduct().isEmpty()) throw new IllegalArgumentException("the cart is empty");
 
-        //calculate total amount of the product and its shipment price if are shippable
         double subtotal=cart.getTotalAmount();
         double totalShip=0;
         for(Products Item: cart.getAllProduct()){
@@ -14,15 +13,14 @@ public class CheckoutService {
                 totalShip+=(Item.getWight()*Item.getPurchasedProduct());
             }
         }
-        //customer payment
+
         customer.withDrawBalance((subtotal+totalShip));
 
-        //updateTheInventory
+  
         for(Products Item: cart.getAllProduct()){
             Item.ReduceQuantity();
         }
 
-        //print the receipt
         printReceipt(cart,subtotal,totalShip,customer);
     }
     private static void printReceipt(Cart cart, double subtotal, double shipping, Customers customer) {
