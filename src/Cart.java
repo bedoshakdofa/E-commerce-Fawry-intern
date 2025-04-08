@@ -42,9 +42,9 @@ public class Cart {
             }
 
         }
-        public void restCart(){
+    }
+    public void restCart(){
         productList.clear();
         }
-    }
 }
 
