@@ -43,7 +43,7 @@ public class Products {
     }
 
 
-    public String getProduct_name() {
+    public String getProductName() {
         return productName;
     }
 
@@ -69,7 +69,7 @@ public class Products {
         return wight!=0;
     }
 
-    public void ReduceQuantity(){
+    public void reduceQuantity(){
         ProductQuantity-=PurchasedProduct;
     }
 }
