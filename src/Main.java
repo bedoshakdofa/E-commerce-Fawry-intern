@@ -8,7 +8,7 @@
 
         public static void main(String[] args) {
             Scanner in=new Scanner(System.in);
-            //adding products
+
             long week = 7L * 24 * 60 * 60 * 1000; // 1 week in ms
             long twoWeeks = 2 * week;
             long month = 4 * week;
