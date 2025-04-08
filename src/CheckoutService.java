@@ -22,6 +22,7 @@ public class CheckoutService {
         }
 
         printReceipt(cart,subtotal,totalShip,customer);
+        cart.RestCart();
     }
     private static void printReceipt(Cart cart, double subtotal, double shipping, Customers customer) {
         System.out.println("** Shipment notice**");
