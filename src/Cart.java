@@ -17,7 +17,7 @@ public class Cart {
       return sum;
     };
 
-    public void AddProduct(Products prod, int Quantity){
+    public void addProduct(Products prod, int Quantity){
         if (!prod.checkProductQuantity(Quantity)){
             throw new IllegalArgumentException("there isn't enough in stoke");
         };
@@ -34,7 +34,7 @@ public class Cart {
         return productList;
     };
 
-    public void RemoveProduct(int id){
+    public void removeProduct(int id){
         for(Products Item:productList) {
             if (Item.getId() == id){
                 productList.remove(Item);
@@ -42,7 +42,7 @@ public class Cart {
             }
 
         }
-        public void RestCart(){
+        public void restCart(){
         productList.clear();
         }
     }
