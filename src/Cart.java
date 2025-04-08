@@ -42,6 +42,9 @@ public class Cart {
             }
 
         }
+        public void RestCart(){
+        productList.clear();
+        }
     }
 }
 
